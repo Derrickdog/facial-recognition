@@ -1,25 +1,26 @@
-// import './App.css';
 import ParticlesBg from 'particles-bg'
 import Navigation from './components/Navigation/Navigation';
 import Logo from './components/Logo/Logo';
 import Rank from './components/Rank/Rank';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import { Component } from 'react';
+import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       input: '',
+      imageUrl: '',
     }
   }
 
   onInputChange = (event) => {
-    console.log(event.target.value);
+    this.setState({input: event.target.value})
   }
 
   onButtonSubmit = () => {
-    console.log('click');
+    this.setState({imageUrl: this.state.input})
   }
 
   render() {
@@ -29,7 +30,7 @@ class App extends Component {
         <Logo />
         <Rank />
         <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
-        {/* <FaceRecognition /> */}
+        <FaceRecognition imageUrl={this.state.imageUrl}/>
         <ParticlesBg type="circle" bg={true} />
       </div>
     );
