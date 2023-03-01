@@ -1,6 +1,7 @@
 import React from 'react'
 
 const FaceRecognition = ({ imageUrl }) => {
+  if (imageUrl !== ''){
   return (
     <div className='center ma'>
       <div className="absolute mt2">
@@ -8,6 +9,7 @@ const FaceRecognition = ({ imageUrl }) => {
       </div>
     </div>
   )
+  }
 }
 
 export default FaceRecognition
