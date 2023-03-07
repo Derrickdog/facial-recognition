@@ -6,9 +6,11 @@ const ImageDisplay = ({ imageUrl, concepts }) => {
       <div className='center ma5'>
         <div className="absolute">
           <img src={imageUrl} alt='input' width='500px'/>
-          <div class="ma5 ">
-            {concepts.map((concept) => (
-              <span class='f3'>{concept.name}, </span>
+          <div class="mb5 mt4">
+            {
+            concepts.map((concept) => (
+            // <span class='f3'>{concept.name}, </span>
+            <div class='f3'>{concept.name}</div>
             ))}
           </div>
         </div>

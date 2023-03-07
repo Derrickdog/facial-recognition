@@ -4,7 +4,7 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
   return (
     <div>
       <p className='f2'>
-        Enter image link to detect faces
+        Input image link to detect image concepts
       </p>
       <div className='center'>
         <div className="center pa4 br3 shadow-5" style={{width: '700px', background: 'linear-gradient(to right, #0099cc, #33cccc)'}}>
