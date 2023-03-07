@@ -6,9 +6,11 @@ const FaceRecognition = ({ imageUrl, concepts }) => {
     <div className='center ma5'>
       <div className="absolute">
         <img src={imageUrl} alt='input' width='500px'/>
-        {concepts.map((concept) => (
-          <p>{concept.name}</p>
-        ))}
+        <div class="ma5 ">
+          {concepts.map((concept) => (
+            <span class='f2'>{concept.name}, </span>
+          ))}
+        </div>
       </div>
     </div>
   )

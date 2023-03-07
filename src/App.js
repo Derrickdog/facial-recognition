@@ -21,18 +21,11 @@ class App extends Component {
     }
   }
 
-  calculateFaceLocation = (data) => {
-    const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
-    const image = document.getElementById('inputimage');
-    const width = Number(image.width);
-    const height = Number(image.height);
-    return {
-      leftCol: clarifaiFace.left_col * width,
-      topRow: clarifaiFace.top_row * height,
-      rightCol: width - (clarifaiFace.right_col * width),
-      bottomRow: height - (clarifaiFace.bottom_row * height)
-    }
-  }
+  // componentDidMount() {
+  //   fetch('http://localhost:3000')
+  //     .then(response => response.json())
+  //     .then(console.log)
+  // }
 
   onInputChange = (event) => {
     this.setState({input: event.target.value})
@@ -40,10 +33,11 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input})
+  
 
     // Clarifai Access
     const PAT = 'ec48fd6e5e8741b491b706521939facd';
-    const USER_ID = 'derrickdog';       
+    const USER_ID = 'derrickdog';             
     const APP_ID = 'my-first-application';
     const MODEL_ID = 'general-image-recognition';
     const MODEL_VERSION_ID = 'aa7f35c01e0642fda5cf400f543e7c40';
@@ -75,13 +69,13 @@ class App extends Component {
     };
 
     // Fetch concepts
-    fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", requestOptions)
-        .then(response => response.json())
-        .then(data => {
-          console.log(data.outputs[0].data.concepts)
-          this.setState({concepts: data.outputs[0].data.concepts})
-        })
-        .catch(error => console.log('error', error));
+      fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", requestOptions)
+          .then(response => response.json())
+          .then(data => {
+            console.log(data.outputs[0].data.concepts)
+            this.setState({concepts: data.outputs[0].data.concepts})
+          })
+          .catch(error => console.log('error', error));
   }
 
   onRouteChange = (route) => {
@@ -97,7 +91,7 @@ class App extends Component {
     const { isSignedIn, imageUrl, route, concepts } = this.state;
     return (
       <div>
-        <ParticlesBg type="circle" bg={true} />
+        <ParticlesBg type="cobweb" bg={true} />
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         {
           route === 'home'
