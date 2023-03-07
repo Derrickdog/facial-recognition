@@ -4,7 +4,7 @@ import Logo from './components/Logo/Logo';
 import Rank from './components/Rank/Rank';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import { Component } from 'react';
-import FaceRecognition from './components/FaceRecognition/FaceRecognition';
+import ImageDisplay from './components/ImageDisplay/ImageDisplay';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 
@@ -21,12 +21,6 @@ class App extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   fetch('http://localhost:3000')
-  //     .then(response => response.json())
-  //     .then(console.log)
-  // }
-
   onInputChange = (event) => {
     this.setState({input: event.target.value})
   }
@@ -34,7 +28,6 @@ class App extends Component {
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input})
   
-
     // Clarifai Access
     const PAT = 'ec48fd6e5e8741b491b706521939facd';
     const USER_ID = 'derrickdog';             
@@ -100,7 +93,7 @@ class App extends Component {
           <Logo />
           <Rank />
           <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
-          <FaceRecognition imageUrl={imageUrl} concepts={concepts}/>
+          <ImageDisplay imageUrl={imageUrl} concepts={concepts}/>
         </div>
           : (
             route === 'signin'
