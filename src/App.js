@@ -15,7 +15,7 @@ class App extends Component {
       input: '',
       // imageUrl: 'https://samples.clarifai.com/metro-north.jpg',
       imageUrl: '',
-      route: 'signin',
+      route: 'home',
       isSignedIn: false,
       concepts: []
     }
