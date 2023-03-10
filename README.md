@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# Image Detection
+
+Live Demo:
+
+## Description
+
+Input any image link to detect 20 concepts from the image.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
