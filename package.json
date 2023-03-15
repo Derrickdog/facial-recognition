@@ -1,6 +1,6 @@
 {
   "name": "facial-recog",
-  "homepage": "https://derrickdog.github.io/image-recognition",
+  "homepage": "https://derrickdog.github.io/image-detect",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
