@@ -6,6 +6,8 @@ Live Demo: https://derrickdog.github.io/image-detect/
 
 Input any image link to detect 20 concepts from the image.
 
+![Detect](https://user-images.githubusercontent.com/105069540/225628476-1b2fed19-0e4d-4c31-9154-51714ca73330.png)
+
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
